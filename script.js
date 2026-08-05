@@ -1,6 +1,3 @@
-// ==========================
-// Select DOM Elements
-// ==========================
 const addButton = document.querySelector(".add-task-btn");
 const modal = document.querySelector(".modal");
 const saveButton = document.querySelector("#saveTask");
@@ -13,9 +10,6 @@ const completedTasks = document.querySelector("#completedTasks");
 const remainingTasks = document.querySelector("#remainingTasks");
 const emptyMessage = document.querySelector(".empty-message");
 
-// ==========================
-// Modal Controllers
-// ==========================
 function openModal() {
     modal.style.display = "flex";
     taskInput.focus();
@@ -29,16 +23,12 @@ function closeModal() {
 addButton.addEventListener("click", openModal);
 cancelButton.addEventListener("click", closeModal);
 
-// Close modal when clicking outside the box
 window.addEventListener("click", function (event) {
     if (event.target === modal) {
         closeModal();
     }
 });
 
-// ==========================
-// Add Task Logic
-// ==========================
 function handleAddTask() {
     const taskName = taskInput.value.trim();
 
@@ -53,16 +43,12 @@ function handleAddTask() {
 
 saveButton.addEventListener("click", handleAddTask);
 
-// Support Enter key inside input
 taskInput.addEventListener("keypress", function (e) {
     if (e.key === "Enter") {
         handleAddTask();
     }
 });
 
-// ==========================
-// Create Task Card
-// ==========================
 function createTask(taskName) {
     const taskCard = document.createElement("div");
     taskCard.className = "task-card";
@@ -82,9 +68,6 @@ function createTask(taskName) {
     updateStatistics();
 }
 
-// ==========================
-// Task Event Listeners
-// ==========================
 function addTaskEvents(taskCard) {
     const deleteButton = taskCard.querySelector(".task-menu-btn");
     const checkbox = taskCard.querySelector(".task-checkbox");
@@ -100,9 +83,6 @@ function addTaskEvents(taskCard) {
     });
 }
 
-// ==========================
-// Statistics & UI Updates
-// ==========================
 function updateStatistics() {
     const allTasks = document.querySelectorAll(".task-card");
     const completed = document.querySelectorAll(".task-card.completed");
@@ -118,9 +98,6 @@ function updateStatistics() {
     }
 }
 
-// ==========================
-// Search Filtering
-// ==========================
 searchInput.addEventListener("input", function () {
     const searchText = searchInput.value.toLowerCase().trim();
     const allTasks = document.querySelectorAll(".task-card");
