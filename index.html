@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="app-title">To Do List</h1>
+    </header>
+
+    <main class="container">
+    <section class="action-bar">
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" placeholder="Search tasks...">
+        </div>
+        <button class="add-task-btn" title="Add Task">+</button>
+    </section>
+
+        <section class="task-list">
+            <p class="empty-message"><b>No tasks yet. Click + to add your first task.</b></p>
+        </section>
+
+        <section class="statistics">
+            <div class="stat-box">
+                <h3>Total</h3>
+                <p id="totalTasks">0</p>
+            </div>
+            <div class="stat-box">
+                <h3>Completed</h3>
+                <p id="completedTasks">0</p>
+            </div>
+            <div class="stat-box">
+                <h3>Remaining</h3>
+                <p id="remainingTasks">0</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal">
+        <div class="modal-content">
+            <h2>Add New Task</h2>
+            <input type="text" id="taskInput" placeholder="Task name...">
+            <div class="modal-buttons">
+                <button id="saveTask">Save</button>
+                <button id="cancelTask">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
